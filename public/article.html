@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>{{article.title}}</h1>
+    <p>{{article.content}}</p>
+    <p>By {{article.author.email}} in {{article.category.name}}</p>
+    {{#if article.comments}}
+      <h2>Comments</h2>
+      <ul>
+        {{#each article.comments}}
+          <li>{{content}}</li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No comments yet.</p>
+    {{/if}}
+    {{#if user}}
+      <form action="/articles/{{article.id}}/comment" method="post">
+        <label for="content">Comment:</label>
+        <textarea id="content" name="content" required></textarea>
+        <br>
+        <button type="submit">Add Comment</button>
+      </form>
+    {{/if}}
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

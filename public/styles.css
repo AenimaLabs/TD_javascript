@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  main {
+    margin: 2rem;
+  }
+  
+  article {
+    margin-bottom: 2rem;
+  }
+  
+  article h2 {
+    margin-bottom: 1rem;
+  }
+  
+  article p {
+    margin-bottom: 0.5rem;
+  }
